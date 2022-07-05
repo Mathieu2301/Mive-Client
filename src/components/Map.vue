@@ -21,10 +21,14 @@ import MovingTrain from './MovingTrain';
 import pathFeatures from '../assets/pathFeatures';
 import stops from '../assets/stops';
 import 'ol/ol.css';
+import lab from './Lab.vue';
+
+const pathParams = location.pathname.split('/').filter((c) => c);
 </script>
 
 <template>
   <div id="map"></div>
+  <lab v-if="pathParams[0] === 'lab'" :map="map"/>
 </template>
 
 <script lang="ts">
